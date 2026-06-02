@@ -2,23 +2,19 @@
 
 Long-term context storage for AI conversations using Claude, GPT, and Gemini. Every session stored verbatim as plain `.txt`, injected automatically as AI context across all sessions and domains.
 
----
-
 ## Features
 
-- **Three AI providers** — Claude (Anthropic), GPT (OpenAI), Gemini (Google), switchable any time in Settings
-- **Multi-agent pipeline** — Claude reasons deeply, GPT audits critically, Gemini synthesizes into one final answer
-- **Verbatim long-term memory** — every turn stored character-for-character. No summarization, no information loss
-- **Automatic domain classification** — first message determines the session domain and reuses existing domains intelligently on new sessions about the same topic
-- **Cross-domain context injection** — recent history from all your domains injected as system prompt on every message
-- **File attachments** — read and analyze code, documents, PDFs, ZIP archives, and images
-- **Encrypted API keys** — stored using OS-level encryption (Windows DPAPI / macOS Keychain). Never plain text
-- **Always-on thinking** — extended reasoning active on every response for all three models
-- **Built-in web search** — each model uses its native search tool when it determines live information is needed
-- **Token budget management** — automatic context truncation prevents rate limit errors
-- **Collapsible sidebar** — responsive layout works on desktop and mobile screen sizes
-
----
+- **Three AI providers** - Claude (Anthropic), GPT (OpenAI), Gemini (Google), switchable any time in Settings
+- **Multi-agent pipeline** - Claude reasons deeply, GPT audits critically, Gemini synthesizes into one final answer
+- **Verbatim long-term memory** - every turn stored character-for-character. No summarization, no information loss
+- **Automatic domain classification** - first message determines the session domain and reuses existing domains intelligently on new sessions about the same topic
+- **Cross-domain context injection** - recent history from all your domains injected as system prompt on every message
+- **File attachments** - read and analyze code, documents, PDFs, ZIP archives, and images
+- **Encrypted API keys** - stored using OS-level encryption (Windows DPAPI / macOS Keychain). Never plain text
+- **Always-on thinking** - extended reasoning active on every response for all three models
+- **Built-in web search** - each model uses its native search tool when it determines live information is needed
+- **Token budget management** - automatic context truncation prevents rate limit errors
+- **Collapsible sidebar** - responsive layout works on desktop and mobile screen sizes
 
 ## Prerequisites
 
@@ -31,8 +27,6 @@ Long-term context storage for AI conversations using Claude, GPT, and Gemini. Ev
 | GPT | [platform.openai.com](https://platform.openai.com) → API Keys | `sk-` |
 | Gemini | [aistudio.google.com](https://aistudio.google.com) → Get API Key | `AIza` |
 
----
-
 ## Installation
 
 ```bash
@@ -43,8 +37,6 @@ npm run dev
 ```
 
 On first launch, open **Settings** (bottom-left of sidebar), enter your API key, select your active model, and click Save. Your first message automatically classifies the domain and creates the session file.
-
----
 
 ## Configuration
 
@@ -62,18 +54,14 @@ Open **Settings** inside the app:
 
 **For large file analysis (500KB+):** switch to `claude-opus-4-5` in the runtime config at `AppData/Roaming/Engram/config.json`. Opus allows 500K input tokens/min vs Sonnet's 30K.
 
----
-
 ## Models
 
 | Provider | Default | Thinking | Web Search | Token Limit/min |
 |---|---|---|---|---|
 | Claude Sonnet | `claude-sonnet-4-6` | `budget_tokens: 10000` | `web_search_20250305` | 30K |
 | Claude Opus | `claude-opus-4-5` | `type: adaptive` | `web_search_20250305` | 500K |
-| GPT | `gpt-5.5-2026-04-23` | `reasoning_effort: high` | Responses API | — |
-| Gemini | `gemini-flash-latest` | `thinking_budget: 8192` | Google Search | — |
-
----
+| GPT | `gpt-5.5-2026-04-23` | `reasoning_effort: high` | Responses API | - |
+| Gemini | `gemini-flash-latest` | `thinking_budget: 8192` | Google Search | - |
 
 ## Supported File Types
 
@@ -86,9 +74,7 @@ Open **Settings** inside the app:
 | **Archive** | `.zip` | Each text file inside extracted and concatenated |
 | **Images** | `.jpg .jpeg .png .webp .gif` | Base64 vision API (all three models) |
 
-Multiple files can be attached to a single message. All text content is injected directly into the message before the API call — no separate upload step, no model-specific format differences.
-
----
+Multiple files can be attached to a single message. All text content is injected directly into the message before the API call - no separate upload step, no model-specific format differences.
 
 ## Multi-Agent Pipeline
 
@@ -114,8 +100,6 @@ Your message + any attached files
 
 The thinking indicator shows which stage is active. Total time is roughly 3× a single-model response.
 
----
-
 ## Building
 
 ```bash
@@ -128,8 +112,6 @@ npm run package  # package as installer
 | Windows | `dist/Engram Setup.exe` |
 | macOS | `dist/Engram.dmg` |
 | Linux | `dist/Engram.AppImage` |
-
----
 
 ## Project Structure
 
@@ -159,18 +141,20 @@ engram-cloud/
 └── config.json
 ```
 
----
-
 ## Security
 
 - API keys are **never stored in plain text**
 - Encrypted using DPAPI on Windows (tied to your Windows login), Keychain on macOS
-- The `config.json` in the project root contains **empty keys** — safe to commit
-- Runtime config with encrypted keys lives in `AppData/Roaming/Engram/` — outside the project
-- All API calls go directly from your machine to the provider — no intermediary server
-
----
+- The `config.json` in the project root contains **empty keys** - safe to commit
+- Runtime config with encrypted keys lives in `AppData/Roaming/Engram/` - outside the project
+- All API calls go directly from your machine to the provider - no intermediary server
 
 ## License
 
 [MIT](../LICENSE) © 2026 Mohammad Hamza Piracha
+
+## Author
+
+**Mohammad Hamza Piracha** |
+Data Scientist & Applied AI Engineer | 
+[LinkedIn](https://www.linkedin.com/in/hamza-piracha) | hamzapiracha@live.com
