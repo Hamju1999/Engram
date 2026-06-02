@@ -1,0 +1,41 @@
+{
+  "name": "engram-local",
+  "version": "1.0.0",
+  "description": "Engram for local AI models. Fully offline, zero cost, Ollama and LM Studio compatible.",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package": "electron-vite build && electron-builder"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "mammoth": "1.8.0",
+    "pdf-parse": "1.1.1",
+    "adm-zip": "0.5.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "electron": "29.4.6",
+    "electron-builder": "24.13.3",
+    "electron-vite": "2.3.0",
+    "vite": "5.4.21"
+  },
+  "build": {
+    "appId": "com.hamju.engram-local",
+    "productName": "Engram Local",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

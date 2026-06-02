@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Google Fonts loaded via link tag in HTML rather than CSS @import.
+      Reason: the link tag is parsed by the browser before CSS, so fonts
+      start downloading earlier. Reduces flash of unstyled text on load.
+
+      Syne       → UI labels, headings, domain names. Geometric, distinctive.
+      JetBrains Mono → all message content. Monospace. Fits the txt/terminal aesthetic.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Engram</title>
+  </head>
+  <body>
+    <!--
+      React mounts here. createRoot targets this div.
+      Nothing else lives in body - React owns it entirely.
+    -->
+    <div id="root"></div>
+
+    <!--
+      type="module" = ES module. Required for Vite's import graph to work.
+      Vite intercepts this request in dev mode and serves the compiled bundle.
+    -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

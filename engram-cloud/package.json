@@ -1,0 +1,52 @@
+{
+  "name": "engram",
+  "version": "1.0.0",
+  "description": "Long-term context storage for AI conversations. Verbatim, domain-split, never summarized.",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package": "electron-vite build && electron-builder",
+    "mobile:build": "vite build --config vite.mobile.config.js",
+    "mobile:sync": "cap sync",
+    "mobile:android": "npm run mobile:build && cap sync android && cap open android",
+    "mobile:ios": "npm run mobile:build && cap sync ios && cap open ios"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@capacitor/core": "6.0.0",
+    "@capacitor/filesystem": "6.0.0",
+    "@capacitor/preferences": "6.0.0",
+    "@capacitor/app": "6.0.0",
+    "mammoth": "1.8.0",
+    "pdf-parse": "1.1.1",
+    "adm-zip": "0.5.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "electron": "29.4.6",
+    "electron-builder": "24.13.3",
+    "electron-vite": "2.3.0",
+    "vite": "5.4.21",
+    "@capacitor/cli": "6.0.0",
+    "@capacitor/android": "6.0.0",
+    "@capacitor/ios": "6.0.0"
+  },
+  "build": {
+    "appId": "com.hamju.engram",
+    "productName": "Engram",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

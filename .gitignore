@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Electron build output
+out/
+
+# Packaged installers
+dist/
+
+# Mobile builds
+mobile-dist/
+android/
+ios/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# package-lock committed per project - do not ignore

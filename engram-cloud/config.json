@@ -1,0 +1,25 @@
+{
+  "contextDir": "",
+
+  "activeModel": "claude",
+
+  "apiKeys": {
+    "claude": "",
+    "openai": "",
+    "gemini": "" 
+  },
+
+  "models": {
+    "claude": {
+      "default": "claude-sonnet-4-6"
+    },
+    "openai": {
+      "default": "gpt-5.5-2026-04-23",
+      "fallback": "gpt-5.4-2026-03-05"
+    },
+    "gemini": {
+      "default": "gemini-flash-latest",
+      "pinned": "gemini-3.5-flash"
+    }
+  }
+}

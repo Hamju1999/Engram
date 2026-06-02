@@ -1,0 +1,11 @@
+{
+  "contextDir": "",
+  "serverType": "ollama",
+  "serverUrl": "http://localhost:11434/v1",
+  "activeMode": "single",
+  "models": {
+    "primary":     "llama3.2",
+    "auditor":     "mistral",
+    "synthesizer": "gemma2"
+  }
+}
