@@ -1,6 +1,8 @@
 # Engram · Cloud
 
-Long-term context storage for AI conversations using Claude, GPT, and Gemini. Every session stored verbatim as plain `.txt`, injected automatically as AI context across all sessions and domains.
+**The problem:** Claude, GPT, and Gemini all offer memory - but it works by summarizing your past conversations into a short notes block. The model decides what matters, paraphrases it, and discards the rest. The errors are silent: you never see what was dropped or how it was reworded until it affects an answer you needed to be right.
+
+**The solution:** Engram stores every turn exactly as written - character for character - in plain `.txt` files on your own machine. No summarization. No paraphrasing. When you start a new session, recent history from all your domains is injected as the system prompt exactly as it was saved. What you said is what the model reads.
 
 ## Features
 
