@@ -2,7 +2,23 @@
 
 > Long-term context storage for AI conversations - verbatim, domain-split, never summarized.
 
-Engram solves the fundamental problem with AI chat interfaces: every conversation starts from zero. It stores your full chat history as plain `.txt` files organized by topic domain, then injects relevant past sessions as context on every new message - giving your AI models genuine long-term memory across sessions and topics.
+**The problem:** Claude, GPT, and Gemini all offer memory - but it works by summarizing your past conversations into a short notes block. The model decides what matters, paraphrases it, and discards the rest. The errors are silent: you never see what was dropped or how it was reworded until it affects an answer you needed to be right.
+
+**The solution:** Engram stores every turn exactly as written - character for character - in plain `.txt` files on your own machine. No summarization. No paraphrasing. When you start a new session, recent history from all your domains is injected as the system prompt exactly as it was saved. What you said is what the model reads.
+
+## Why Engram
+
+Native memory in Claude, GPT, and Gemini is optimized for lightweight long-term retention - names, preferences, ongoing projects distilled into bullet points. That works well for general use. It breaks down on deep technical work where the reasoning trail matters as much as the conclusion: the exact error message from three sessions ago, the architectural decision you made and why, the specific line of code that was changed.
+
+Engram is built for that case. Four concrete differences from native memory:
+
+**Verbatim vs compressed.** Native memory paraphrases. Engram stores the raw exchange. A 500-line code review from last week is still a 500-line code review when it gets injected - not a three-sentence summary.
+
+**Transparent.** Every session is a plain `.txt` file you can open in any text editor. You can see exactly what the model will read before it reads it. Native memory is a black box.
+
+**Cross-provider.** The same session files are injected whether you are using Claude, GPT, Gemini, or a local model. Switching providers does not lose your context.
+
+**Engram.** Sessions live on your machine. No vendor controls them, no policy change removes them, no account deletion wipes them.
 
 **Two editions:**
 
@@ -16,12 +32,6 @@ Engram solves the fundamental problem with AI chat interfaces: every conversatio
 | **Web search** | Built-in per model | Not included |
 
 Both editions share the same verbatim `.txt` storage format - sessions are fully portable between them.
-
-## Why Engram
-
-Most AI memory systems compress or paraphrase your past conversations before injecting them. Engram does not. Every turn is stored exactly as written - character for character. What you said is what gets stored, and what gets stored is what the model reads.
-
-This matters because summarization errors are silent. You don't know what was dropped or distorted until it affects the answer. Verbatim storage eliminates that failure mode entirely.
 
 ## Features
 
